@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Check for backup file, if does n't exist create a new
+# file
+
+backup="$HOME/.config/feren-welcome/cinnamon-backup.conf"
+
+if [ -f $backup ]
+then
+  : #echo "Backup file found"
+else
+  #echo "Backup file not found, creating new file"
+  dconf dump /org/cinnamon/ > $backup
+fi
+
+# Reset and restart panel
+gsettings set org.cinnamon.theme name 'feren'
+gsettings set org.cinnamon.desktop.wm.preferences theme 'feren'
+gsettings set org.cinnamon.desktop.interface gtk-theme 'feren'
+gsettings set org.cinnamon.desktop.interface icon-theme 'Inspire'
+gsettings set org.cinnamon.desktop.wm.preferences button-layout maximize,menu:minimize,close
+gsettings set org.cinnamon.muffin button-layout maximize,menu:minimize,close
+gsettings set org.cinnamon.desktop.interface gtk-decoration-layout maximize,menu:minimize,close
+killall docky
+rm ~/.config/autostart/docky.desktop
+gsettings set org.cinnamon.desktop.interface cursor-theme 'DMZ-White'
+gsettings set org.cinnamon panels-height "['1:38', '2:38']"
+gsettings set org.cinnamon enabled-extensions "['!Flipper@connerdev', 'transparent-panels@germanfr']"
+gsettings set org.cinnamon panels-enabled "['1:0:bottom']"
+gsettings set org.cinnamon panels-resizable "['1:true', '2:true']"
+gsettings set org.cinnamon enabled-applets "['panel1:left:1:IcingTaskManager@json:44', 'panel1:left:0:zuromenu@feren:47', 'panel1:right:0:keyboard@cinnamon.org:7', 'panel1:right:3:removable-drives@cinnamon.org:6', 'panel1:right:4:notifications@cinnamon.org:4', 'panel1:right:5:show-hide-applets@mohammad-sn:42', 'panel1:right:6:weather@mockturtl:43', 'panel1:right:7:MessagingMenuV3@blub:23', 'panel1:right:8:systray@cinnamon.org:36', 'panel1:right:9:network@cinnamon.org:9', 'panel1:right:10:sound@cinnamon.org:10', 'panel1:right:11:power@cinnamon.org:11', 'panel1:right:0:user@cinnamon.org:48', 'panel1:right:0:a11y@cinnamon.org:49', 'panel1:right:0:inhibit@cinnamon.org:50', 'panel1:right:0:ScreenShot+RecordDesktop@tech71:52']"
+cinnamon --replace &
+
+# Just give sometime for panel to restart
+sleep 2
+

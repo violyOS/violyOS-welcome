@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="css/material-icons.css" rel="stylesheet" media="screen">
+  <link href="css/animate.css" rel="stylesheet" media="screen">
+  <link href="css/welcome.css" rel="stylesheet" media="screen">
+</head>
+<body class="backdrop-simple fade fade-1s">
+  <div id="wrapper">
+    <div class="container-fluid">
+      <div id="navigation">
+        <div id="navigation-title">&zwnj;Default Settings&zwnj;</div>
+        <div id="navigation-right"></div>
+      </div>
+    </div>
+    <div id="content" class="container entire-page-fade">
+      <div class="row">
+      	<div class="col-md-12">
+          <h2>Restore panels and theme</h2>
+          <p>Ruined your panels and themes while playing with feren OS? Don't worry. We can
+          help you to reset your theme and panels with a single click! &#x1F60A;
+          </p>
+          <div class="alert alert-warning">This will reset all changes that you have made on panels and themes and will take
+          to default feren OS configuration.
+          </div>
+          <div class="text-md-right">
+          	<span id="panel-status" class="hidden"><img src="img/welcome/processing.gif" style="height: 24px"/> &zwnj;Applying Changes...&zwnj;</span>
+          	<a id="panel-reset" onclick="cmd('panel-reset')" class="btn btn-primary panel-apply"><i class="material-icons">&#xE8B3;</i>&nbsp;<span class="button-text">Reset Theme & Panel</span></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+      	<div class="col-md-12">
+      		<h2>Themer is your one stop tool for changing Themes</h2>
+      		<p></p>feren OS uses <strong>'feren' (Based on Arc)</strong> as the default theme package. It uses the 'feren' theme for Gtk, windows,
+      		panels, login window and lock screen and <strong>'Inspire'</strong> as the icon theme.</p>
+
+      		<p>Now, you may be confused about how to use feren OS, and so, to fix that, we created <strong>Themer</strong> which is basically a program which is capable of changing the whole DE in one click to look as close to that selected OS and/or theme as possible.
+      		</p>
+
+      		<p>As feren OS values the freedom of users, we provide easy options to switch between our default <em>feren OS style
+      		</em> and <em>anything else you want.</em></p>
+      	</div>
+      </div>
+      <div class="row text-md-center">
+      	<img alt="Themer Icon" src="img/applications/themer.png" class="image">
+        <h1> </h1>
+      	<br>
+      	<a id="arc-theme-install" class="btn btn-primary theme-apply" onclick="cmd('themer');cmd('')">
+      	  <span class="button-text">Run Themer</span>
+      	</a>
+      	<a id="arc-theme-remove" class="btn btn-primary theme-apply" onclick="cmd('themer');cmd('')">
+      	  <span class="button-text">Run Themer</span>
+      	</a>
+      	<br>
+       	</div>
+      	      </div>
+      
+    </div>
+  </div>
+  <script src="js/jquery-2.1.4.js"></script>
+  <script src="js/tether.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/janimate.js"></script>
+  <script src="js/confetti.js"></script>   <!-- Confetti only appears on special events -->
+  <script src="js/welcome.js"></script>
+</body>
+</html>
