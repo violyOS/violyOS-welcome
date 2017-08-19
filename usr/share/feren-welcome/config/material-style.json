@@ -4,7 +4,10 @@
     "VALUES": {
       "cursor-theme": "Paper",
       "gtk-theme": "Adapta",
-      "icon-theme": "Paper"
+      "icon-theme": "Paper",
+      "monospace-font-name": "Noto Mono 11",
+      "font-name": "Noto Sans UI 11",
+      "document-font-name": "Noto Sans UI 11"
     }
   }, 
   {
@@ -12,7 +15,7 @@
     "VALUES": {
       "color-shading-type": "solid",
       "picture-options": "stretched",
-      "picture-uri": "file:////usr/share/backgrounds/budgie/sundown_beach_by_quino_al.jpg",
+      "picture-uri": "file:////usr/share/backgrounds/budgie/ubuntu_budgie_wallpaper3.jpg",
       "primary-color": "#008094"
     }
   },
@@ -21,6 +24,19 @@
     "VALUES": {
       "builtin-theme": false,
       "dark-theme": true
+    }
+  },
+  {
+    "SCHEMA": "org.gnome.desktop.wm.preferences",
+    "VALUES": {
+      "titlebar-font": "Noto Sans UI Bold 11",
+      "theme": "Adapta"
+    }
+  },
+  {
+    "SCHEMA": "org.gnome.nautilus.desktop",
+    "VALUES": {
+      "font": "Noto Sans UI 11"
     }
   }
 ]

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <link href="css/material-icons.css" rel="stylesheet" media="screen">
@@ -9,49 +10,52 @@
 </head>
 <body class="backdrop-simple fade fade-1s">
   <div id="wrapper">
-    <div class="container-fluid">
-      <div id="navigation">
-        <div id="navigation-title">Community</div>
-        <div id="navigation-right"></div>
-      </div>
-    </div>
+    <div id="title-inject">&zwnj;Community&zwnj;</div>
     <div id="content" class="container entire-page-fade">
       <div class="row">
         <div class="col-md-12">
           <!--Body content-->
-          <h2>Forum</h2>
-          <p>To play an active role and help shape the direction of feren OS,
+          <h2>&zwnj;Chat Rooms&zwnj;</h2>
+          <p>&zwnj;To play an active role and help shape the direction of feren OS,
           the feren OS chat room is the best place to go. From here, you can talk with the feren OS
-          team and other members of our growing community.</p>
+          team and other members of our growing community.&zwnj;</p>
           <div class="alert alert-warning offline">
-            <h5>It appears you are not connected to the Internet. Please check your connection to access this content.</h5>
-            <div id="reconnectFailed"><p><i class="material-icons">&#xE002;</i>Sorry, Welcome was unable to establish a connection.</p></div>
-            <a onclick="reconnectTimeout();" class="btn btn-warning"><i class="material-icons">&#xE5D5;</i>Retry</a>
+            <h5>&zwnj;It appears you are not connected to the Internet. Please check your connection to access this content.&zwnj;</h5>
+            <div id="reconnectFailed"><p><i class="material-icons">&#xE002;</i>&zwnj;Sorry, Welcome was unable to establish a connection.&zwnj;</p></div>
+            <a onclick="reconnectTimeout();" class="btn btn-warning"><i class="material-icons">&#xE5D5;</i>&zwnj;Retry&zwnj;</a>
           </div>
           <div align="center">
-            <a class="btn btn-inverse" onclick="cmd('link?http://ferenos.freeforums.net);cmd('')">
-              <span class="button-text">Forum Coming Soon</span>
+            <a class="btn btn-inverse" onclick="cmd('link?https://gitter.im/feren-Community');cmd('')">
+              <img class="button-icon" src="img/social/gitter.svg">&nbsp;<span class="button-text">feren OS &zwnj;Chat Room&zwnj;</span>
             </a>
           </div>
-        </div>
-      </div>
-      <hr>
       <div class="row">
         <div class="col-md-12">
-          <h2>Social Networks</h2>
-          <p>feren OS is active on the following social networks.</p>
+          <h2>&zwnj;Forum&zwnj;</h2>
+          <p>&zwnj;Due to the Linux Mint base, you can also find help for any issues you might have at the following links.&zwnj;</p>
+          <ul>
+            <li class="official-only"><a onclick="cmd('link?http://askubuntu.com/');cmd('')">Ask Ubuntu</a></li>
+            <li><a onclick="cmd('link?https://forums.linuxmint.com');cmd('')">Linux Mint Forums</a></li>
+          </ul>
         </div>
       </div>
+      <hr/>
       <div class="row">
+        <div class="col-md-12">
+          <h2>&zwnj;Social Networks&zwnj;</h2>
+          <p>&zwnj;feren OS is active on the following social networks.&zwnj;</p>
+        </div>
+      </div>
+      <div class="row social-banner">
         <div class="col-md-2">
           <a class="hover-menu-block">
             <img src="img/social/g+.svg"/>
             <ul class="hover-menu">
               <li onclick="cmd('link?https://plus.google.com/communities/102693891941820324503');cmd('')">
-                G+ Community
+                &zwnj;G+ Community&zwnj;
               </li>
               <li onclick="cmd('link?https://plus.google.com/+ffcovfn');cmd('')">
-                G+ Developer's Page
+                &zwnj;G+ Developer's Page&zwnj;
               </li>
             </ul>
           </a>
@@ -61,7 +65,7 @@
             <img src="img/social/gitter.svg"/>
             <ul class="hover-menu">
               <li onclick="cmd('link?https://gitter.im/feren-Community')">
-                Gitter Chat Room
+                &zwnj;Gitter Chat Room&zwnj;
               </li>
             </ul>
           </a>
@@ -70,38 +74,44 @@
           <a class="hover-menu-block">
             <img src="img/social/github.svg"/>
             <ul class="hover-menu">
-              <li onclick="cmd('link?https://github.com/feren-OS')">
-                Github
+              <li onclick="cmd('link?http://github.com/feren-OS')">
+                GitHub
               </li>
             </ul>
           </a>
         </div>
       </div><!-- enf of social banner-->
       <hr/>
-      <div class="row">
+      <!-- <div class="row">
         <div class="col-md-12">
-          <h2>Local Communities</h2>
-          <p> In addition to global communities, feren OS also encourages local communities to 
+          <h2>&zwnj;Local Communities&zwnj;</h2>
+          <p>&zwnj;In addition to global communities, feren OS also encourages local communities to
           support users coming from diverse backgrounds. In this section, you can discover our local communities. If you
           are interested to manage a local community for feren OS please let us know, so that we
-          can list it here and improve its visibility.</p>
+          can list it here and improve its visibility.&zwnj;</p>
         </div>
       </div>
       <div class="row text-md-center community-groups">
         <div class="col-md-2">
-            <!--Place holder -->
+            <!--Place holder --><!--
         </div>
         <div class="col-md-4">
           <ul>
-            <li class="btn btn-inverse" onclick="cmd('link?https://disqus.com/home/channel/thegreatforum/discussion/channel-thegreatforum/general_discussion/newest/')">
-              &nbsp;<span class="button-text">The Great Forum (feren OS's Developer is known to be here)</span>
+            <li class="btn btn-inverse" onclick="cmd('link?https://www.facebook.com/groups/161347137666671/')">
+              <img class="button-icon" src="img/social/facebook.svg"/>
+              &nbsp;<span class="button-text">&zwnj;Ubuntu Budgie Brasil&zwnj;</span>
             </li>
-            <li class="btn btn-inverse" onclick="cmd('link?http://linuxnetwork.proboards.com/')">
-              &nbsp;<span class="button-text">Linux Network (I probably wouldn't get away with not including this)</span>
-            </li>
-          </li>
+          </ul>
         </div>
-      </div>
+        <div class="col-md-4">
+          <ul>
+            <li class="btn btn-inverse" onclick="cmd('link?http://telegram.me/UbuntuBudgie')">
+              <img class="button-icon" src="img/social/telegram.svg"/>
+              &nbsp;<span class="button-text">&zwnj;Ubuntu Budgie Brasil&zwnj;</span>
+            </li>
+          </ul>
+        </div>
+      </div> -->
     </div>  <!-- end of content -->
   </div>    <!-- end of wrapper -->
   <script src="js/jquery-2.1.4.js"></script>

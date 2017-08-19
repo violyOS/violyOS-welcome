@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="css/material-icons.css" rel="stylesheet" media="screen">
@@ -8,21 +9,16 @@
     <link href="css/welcome.css" rel="stylesheet" media="screen">
   </head>
   <body class="backdrop-simple hidden" style="overflow: hidden;">
-    <div class="container-fluid">
-      <div id="navigation">
-        <div id="navigation-title">&zwnj;Welcome Screen&zwnj;</div>
-        <div id="navigation-right"></div>
-      </div>
-    </div>
+    <div id="title-inject">&zwnj;Main Menu&zwnj;</div>
     <div class="entire-page-fade fade fade-1s" id="wrapper">
-      <div id="header" class="container-fluid" style="padding-top: 64px">
+      <div id="header" class="container-fluid" style="padding-top: 36px; padding-bottom: 36px">
         <div class="row">
           <div class="col-md-12 center splash-version">
             <img id="wordmark" src="img/welcome/blank.svg">
           </div>
         </div>
-        <div class="row main-menu-textbox">
-          <div class="main-menu-text">
+        <div class="row">
+          <div class="col-md-12 center">
             &zwnj;Choose an option to discover your new operating system.&zwnj;
           </div>
         </div>
@@ -55,11 +51,17 @@
                 &nbsp; &zwnj;Installation Help&zwnj;
               </a>
             </div>
+            <div class="button-group normal-session-only">
+              <span class="btn-icon material-icons">&#xE887;</span>
+              <a class="btn btn-inverse fade fade-5s hvr-shadow" onclick="smoothPageFade('budgie-applets.html')">
+                &nbsp; &zwnj;Recommended Apps&zwnj;
+              </a>
+            </div>
           </div>
           <div class="col-md-6 btn-showcase">
             <!-- Distribution Logo-->
             <div class="row text-xs-center">
-              <div class="col-md-12">
+              <div class="col-md-12 center">
                 <img id="main-menu-logo" class="entire-page-fade main-menu-logo animated rotateIn fadeIn hvr-shadow" src="img/distro-icon.svg">
               </div>
             </div>
@@ -67,9 +69,9 @@
           <div class="col-md-3 btn-showcase">
             <!-- Project -->
             <div class="button-group">
-              <span class="btn-icon material-icons">&#xE0B9;</span>
-              <a id="chatroom" class="btn btn-inverse fade fade-3s hvr-shadow" onclick="smoothPageFade('chatroom.html')">
-                &nbsp; &zwnj;Chat room&zwnj;
+              <span class="btn-icon material-icons">&#xE854;</span>
+              <a id="store" class="btn btn-inverse fade fade-3s hvr-shadow" onclick="smoothPageFade('store.html')">
+                &nbsp; &zwnj;Online Store&zwnj;
               </a>
             </div>
             <div class="button-group">
@@ -84,24 +86,34 @@
                 &nbsp; &zwnj;Get Involved&zwnj;
               </a>
             </div>
-            
+            <div class="button-group">
+              <span class="btn-icon material-icons">&#xE87D;</span>
+              <a id="donate" class="btn btn-inverse fade fade-5s hvr-shadow" onclick="smoothPageFade('donate.html')">
+                &nbsp; &zwnj;Donate&zwnj;
+              </a>
+            </div>
           </div>
         </div>
         <div class="row">
           <!-- Support -->
           <div class="live-session-only push-md-4 col-md-4 btn-showcase">
             <a id="install" class="btn btn-block btn-primary btn-lg fade fade-5s hvr-shadow" onclick="cmd('install-os');cmd('')">
-              <span class="material-icons">&#xE2C0;</span>Install Now
+              <span class="material-icons">&#xE2C0;</span>&zwnj;Install Now&zwnj;
             </a>
           </div>
-          <div class="normal-session-only push-md-3 col-md-3 btn-showcase">
-            <a class="btn btn-block btn-primary btn-lg fade fade-5s hvr-shadow" onclick="cmd('software-center');cmd('')">
-              <span class="material-icons">&#xE8C9;</span>Software Center
-            </a>
+          <div class="normal-session-only push-md-2 col-md-4 btn-showcase">
+			  <div class="dropup">
+				  <a class="btn btn-primary btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">&zwnj;Install Software&zwnj;</a>
+				  <div class="dropdown-menu">
+					<a class="dropdown-item" href="#" onclick="cmd('software-center');cmd('')">&zwnj;Software Center&zwnj;</a>
+					<a class="dropdown-item" href="#" onclick="cmd('link?https://uappexplorer.com/snaps')">&zwnj;Snap Apps&zwnj;</a>
+					<a class="dropdown-item" href="#" onclick="cmd('link?http://flatpak.org/apps.html')">&zwnj;Flatpak Apps&zwnj;</a>
+				  </div>
+			  </div>
           </div>
-          <div class="normal-session-only push-md-3 col-md-3 btn-showcase">
+          <div class="normal-session-only push-md-2 col-md-4 btn-showcase">
             <a class="btn btn-block btn-primary btn-lg fade fade-5s hvr-shadow" onclick="smoothPageFade('default.html');cmd('')">
-              <span class="material-icons">&#xE8B9;</span>Default Settings
+              &zwnj;Default Settings&zwnj;
             </a>
           </div>
         </div>
@@ -111,39 +123,75 @@
         <div class="container-fluid">
           <div class="row footer-content">
             <div class="col-md-4 social">
+              <!-- onclick="cmd('link?https://plus.google.com/communities/106822666079268690759')" -->
               <a class="hover-menu-block">
                 <img src="img/social/g+.svg"/>
                 <ul class="hover-menu">
                   <li onclick="cmd('link?https://plus.google.com/communities/102693891941820324503');cmd('')">
-                    G+ Community
+                    &zwnj;G+ Community&zwnj;
                   </li>
                   <li onclick="cmd('link?https://plus.google.com/+ffcovfn');cmd('')">
-                    G+ Developer's Page
+                    &zwnj;G+ Developer's Page&zwnj;
                   </li>
                 </ul>
               </a>
 
+              <!--<a class="hover-menu-block">
+                <img src="img/social/facebook.svg"/>
+                <ul class="hover-menu">
+                  <li onclick="cmd('link?https://www.facebook.com/groups/UbuntuBudgie/');cmd('')">
+                    &zwnj;Facebook Group&zwnj;
+                  </li>
+                  <li onclick="cmd('link?https://www.facebook.com/UbuntuBudgie');cmd('')">
+                    &zwnj;Facebook Page&zwnj;
+                  </li>
+                </ul>
+              </a>
+              <a class="hover-menu-block">
+                <img src="img/social/reddit.svg"/>
+                <ul class="hover-menu">
+                  <li onclick="cmd('link?https://www.reddit.com/r/budgieremix')">
+                    &zwnj;Reddit&zwnj;
+                  </li>
+                </ul>
+              </a> -->
               <a class="hover-menu-block">
                 <img src="img/social/gitter.svg"/>
                 <ul class="hover-menu">
                   <li onclick="cmd('link?https://gitter.im/feren-Community')">
-                    Gitter Chat Room
+                    &zwnj;Gitter Chat Room&zwnj;
                   </li>
                 </ul>
               </a>
               <a class="hover-menu-block">
                 <img src="img/social/github.svg"/>
                 <ul class="hover-menu">
-                  <li onclick="cmd('link?https://github.com/feren-OS')">
-                    Github
+                  <li onclick="cmd('link?http://github.com/feren-OS')">
+                    GitHub
                   </li>
                 </ul>
               </a>
+              <!-- <a class="hover-menu-block">
+                <img src="img/social/twitter.svg"/>
+                <ul class="hover-menu">
+                  <li onclick="cmd('link?https://twitter.com/ubuntubudgie')">
+                    Twitter
+                  </li>
+                </ul>
+              </a>
+              <a class="hover-menu-block">
+                <img src="img/social/irc.svg"/>
+                <ul class="hover-menu">
+                  <li onclick="cmd('link?https://ubuntubudgie.org/irc')">
+                    IRC
+                  </li>
+                </ul>
+              </a> -->
             </div>
             <div class="col-md-2"></div>
             <div class="col-md-6 text-md-right form normal-session-only">
               <a onclick="cmd('toggle-startup'); document.title = ''" id="open-at-start" class="entire-page-fade">
-                <span id="autostart" class="material-icons"></span> &zwnj;Show this dialog on startup?&zwnj;
+                <span id="autostart" class="material-icons"></span> &zwnj;Show This Next Time you Log In&zwnj;
               </a>
             </div>
           </div>

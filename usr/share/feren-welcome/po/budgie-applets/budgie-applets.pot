@@ -1,0 +1,79 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Budgie Welcome\n"
+"POT-Creation-Date: 2016-02-27 12:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team:: LANGUAGE <LL@li.org>\n"
+"Report-Msgid-Bugs-To : you@example.com\n"
+
+#: budgie-applets.html:13
+msgid "Budgie Desktop Applets"
+msgstr ""
+
+#: budgie-applets.html:15
+msgid ""
+"Logout and login after installing applets. Open Raven - Budgie Settings - "
+"Panel to add applets"
+msgstr ""
+
+#: budgie-applets.html:20
+msgid "Haste Applet"
+msgstr ""
+
+#: budgie-applets.html:25
+msgid ""
+"Post any text – be it code or prose – to various services directly from your"
+" desktop."
+msgstr ""
+
+#: budgie-applets.html:29, 51, 73, 95, 117
+msgid "Remove"
+msgstr ""
+
+#: budgie-applets.html:32, 54, 76, 98, 120
+msgid "Install Applet"
+msgstr ""
+
+#: budgie-applets.html:35, 57, 79, 101, 123
+msgid "Applying Changes..."
+msgstr ""
+
+#: budgie-applets.html:42
+msgid "Screenshot Applet"
+msgstr ""
+
+#: budgie-applets.html:47
+msgid ""
+"An advanced screenshot utility for capturing and organizing screenshots."
+msgstr ""
+
+#: budgie-applets.html:64
+msgid "Calendar Applet"
+msgstr ""
+
+#: budgie-applets.html:69
+msgid "Show date and time and when clicked show a calendar in a popover."
+msgstr ""
+
+#: budgie-applets.html:86
+msgid "Brightness Control Applet"
+msgstr ""
+
+#: budgie-applets.html:91
+msgid "Allows you to control the screen brightness."
+msgstr ""
+
+#: budgie-applets.html:108
+msgid "Pixel-Saver Applet"
+msgstr ""
+
+#: budgie-applets.html:113
+msgid ""
+"Hides the title bar from maximized windows and creates a new one inside the "
+"panel."
+msgstr ""

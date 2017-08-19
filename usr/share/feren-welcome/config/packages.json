@@ -1,31 +1,119 @@
 {
+  "budgie-applets" : {
+	  "haste-applet" : {
+		  "packages" : ["budgie-haste-applet"],
+		  "repos" : {
+			  "xenial" : ["ppa:budgie-remix/ppa"],
+			  "yakkety" : ["ppa:budgie-remix/ppa"],
+              "zesty" : ["ppa:ubuntubudgie/backports"],
+              "artful" : ["ppa:ubuntubudgie/backports"]
+		  }
+	  },
+	  "screenshot-applet" : {
+		  "packages" : ["budgie-screenshot-applet"],
+		  "repos" : {
+			  "xenial" : ["ppa:budgie-remix/ppa"],
+			  "yakkety" : ["ppa:budgie-remix/ppa"],
+              "zesty" : ["ppa:ubuntubudgie/backports"],
+              "artful" : ["ppa:ubuntubudgie/backports"]
+		  }
+	  },
+	  "calendar-applet" : {
+		  "packages" : ["budgie-calendar-applet"],
+		  "repos" : {
+			  "xenial" : ["ppa:budgie-remix/ppa"],
+			  "yakkety" : ["ppa:budgie-remix/ppa"],
+              "zesty" : ["ppa:ubuntubudgie/backports"],
+              "artful" : ["ppa:ubuntubudgie/backports"]
+		  }
+	  },
+	  "brightness-applet" : {
+		  "packages" : ["budgie-brightness-control-applet"],
+		  "repos" : {
+			  "xenial" : ["ppa:budgie-remix/ppa"],
+			  "yakkety" : ["ppa:budgie-remix/ppa"],
+              "zesty" : ["ppa:ubuntubudgie/backports"],
+              "artful" : ["ppa:ubuntubudgie/backports"]
+		  }
+	  },
+	  "pixel-applet" : {
+		  "packages" : ["budgie-pixel-saver-applet"],
+		  "repos" : {
+			  "xenial" : ["ppa:budgie-remix/ppa"],
+			  "yakkety" : ["ppa:budgie-remix/ppa"],
+              "zesty" : ["ppa:ubuntubudgie/backports"],
+              "artful" : ["ppa:ubuntubudgie/backports"]
+		  }
+	  }
+
+  },
   "recommendations" : {
     "snap" : {
       "packages" : ["snapd"]
     },
     "flatpak" : {
-      "packages" : ["flatpak"],
-      "repos" : ["ppa:alexlarsson/flatpak"]
+      "packages" : ["flatpak", "xdg-desktop-portal-gtk"],
+      "repos" : {
+        "xenial" : ["ppa:alexlarsson/flatpak"]
+      }
     },
     "skippy-xd" : {
       "packages" : ["skippy-xd"],
-      "repos" : ["ppa:budgie-remix/ppa"]
+      "repos" : {
+        "xenial" : ["ppa:budgie-remix/ppa"],
+        "yakkety" : ["ppa:budgie-remix/ppa"],
+        "zesty" : ["ppa:ubuntubudgie/backports"],
+        "artful" : ["ppa:ubuntubudgie/backports"]
+      }
     },
 
     "steam" : {
       "packages" : ["steam:i386"],
-      "ubuntu-repos" : ["multiverse"]
+      "repos" : {
+        "all" : ["multiverse"]
+      }
     },
     "screenshot" : {
       "packages" : ["budgie-screenshot-applet"],
-      "repos" : ["ppa:budgie-remix/ppa"]
+      "repos" : {
+        "xenial" : ["ppa:budgie-remix/ppa"],
+        "yakkety" : ["ppa:budgie-remix/ppa"],
+        "zesty" : ["ppa:ubuntubudgie/backports"],
+        "artful" : ["ppa:ubuntubudgie/backports"]
+      }
+    },
+    "backport" : {
+      "repos" : {
+        "xenial" : ["ppa:budgie-remix/ppa"],
+        "yakkety" : ["ppa:budgie-remix/ppa"],
+        "zesty" : ["ppa:ubuntubudgie/backports"],
+        "artful" : ["ppa:ubuntubudgie/backports"]
+      }
     }
   },
   "gettingstarted" : {
     "restricted-extras" : {
       "packages" : ["ubuntu-restricted-extras"],
       "excludes" : ["ttf-mscorefonts-installer"],
-      "ubuntu-repos" : ["multiverse"]
+      "repos" : {
+        "all" : ["multiverse"]
+      }
+    },
+    "ibus" : {
+      "packages" : ["ibus"],
+      "excludes" : ["fcitx"],
+      "post-install" : "ibus-setup"
+    },
+    "fcitx" : {
+      "packages" : ["fcitx"],
+      "excludes" : ["ibus"],
+      "post-install" : "fcitx-setup"
+    },
+    "ibus-setup" : {
+      "script" : "ibus-setup"
+    },
+    "fcitx-setup" : {
+      "script" : "fcitx-setup"
     },
     "keyboard-chinese" : {
       "packages" : ["ibus-pinyin"]
@@ -40,7 +128,7 @@
       "packages" : ["deja-dup"]
     },
     "firewall" : {
-      "packages" : ["gufw"]
+      "packages" : ["gufw","net-tools"]
     },
     "firefox" : {
       "packages" : ["firefox"]
@@ -50,16 +138,23 @@
     },
     "chrome" : {
       "packages" : ["google-chrome-stable"],
-      "repos" : ["deb http://dl.google.com/linux/chrome/deb/ stable main"]
+      "repos" : {
+        "all" : ["deb http://dl.google.com/linux/chrome/deb/ stable main"]
+      },
+      "key-commands" : ["wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -"]
     },
     "opera" : {
       "packages" : ["opera-stable"],
-      "repos" : ["deb https://deb.opera.com/opera-stable/ stable non-free"],
+      "repos" : {
+        "all" : ["deb https://deb.opera.com/opera-stable/ stable non-free"]
+      },
       "key-commands" : ["wget -qO- https://deb.opera.com/archive.key | apt-key add -"]
     },
     "vivaldi" : {
       "packages" : ["vivaldi-stable"],
-      "repos" : ["deb http://repo.vivaldi.com/stable/deb/ stable main"],
+      "repos" : {
+        "all" : ["deb http://repo.vivaldi.com/stable/deb/ stable main"]
+      },
       "key-commands" : ["curl http://repo.vivaldi.com/stable/linux_signing_key.pub | sudo apt-key add -",
                         "apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551"]
     },
@@ -74,11 +169,40 @@
   },
   "default" : {
     "arc-theme" : {
-      "packages" : ["arc-theme", "faba-icon-theme", "moka-icon-theme", "arc-firefox-theme", "pocillo-icon-theme"]
+      "packages" : ["arc-theme", "pocillo-icon-theme"]
     },
     "material-theme" : {
-      "packages" : ["adapta-gtk-theme", "paper-cursor-theme", "paper-icon-theme"],
-      "repos" : ["ppa:snwh/pulp", "ppa:tista/adapta"]
-    }
+      "packages" : ["adapta-gtk-theme", "paper-cursor-theme", "paper-icon-theme", "fonts-noto"],
+      "repos" : {
+        "xenial" : ["ppa:snwh/pulp", "ppa:tista/adapta"],
+        "yakkety" : ["ppa:snwh/pulp", "ppa:tista/adapta"],
+        "zesty" : ["ppa:ubuntubudgie/backports", "ppa:tista/adapta"],
+        "artful" : ["ppa:ubuntubudgie/backports", "ppa:tista/adapta"]
+      }
+    },
+    "material-vimix-theme" : {
+      "packages" : ["vimix-gtk-themes", "paper-cursor-theme", "paper-icon-theme", "fonts-noto"],
+      "repos" : {
+        "all" : ["ppa:snwh/pulp", "ppa:noobslab/themes"]
+      }
+    },
+    "material-flat-plat-theme" : {
+      "packages" : ["flat-plat", "numix-icon-theme-circle", "fonts-noto"],
+      "repos" : {
+        "xenial" : ["ppa:budgie-remix/ppa", "ppa:numix/ppa"],
+        "yakkety" : ["ppa:budgie-remix/ppa", "ppa:numix/ppa"],
+        "zesty" : ["ppa:ubuntubudgie/backports", "ppa:numix/ppa"],
+        "artful" : ["ppa:ubuntubudgie/backports", "ppa:numix/ppa"]
+      }
+    },
+    "vertex-theme" : {
+      "packages" : ["vertex-theme", "vertex-icons"],
+      "repos" : {
+        "xenial" : ["ppa:noobslab/icons"]
+        }
+      },
+    "ceti-2-theme" : {
+      "packages" : ["ceti-2-theme"]
+      }
   }
 }

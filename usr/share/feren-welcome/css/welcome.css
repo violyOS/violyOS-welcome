@@ -12,7 +12,6 @@
   font-style: normal;
   font-weight: 400;
 }
-@font-face {
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 700;
@@ -49,7 +48,7 @@ body, button {
 }
 
 .backdrop-simple {
-  background-color: #ffffff;
+  background-color: #f4f4f4;
 }
 
 .cursor-wait {
@@ -62,12 +61,11 @@ body, button {
 
 #header {
   padding: 8px 0;
-  background-color: rgba(208, 208, 208, 0.25);
   z-index: 10
 }
 
 #header .logo {
-  height: 64px;
+  height: 32px;
 }
 
 #header h1 {
@@ -79,7 +77,6 @@ body, button {
                0px -5px 35px rgba(255,255,255,0.8);
 
   font-size: 24px;
-  font-weight: bold;
 }
 
 #header h2 {
@@ -91,127 +88,10 @@ body, button {
                0px -5px 35px rgba(255,255,255,0.8);
 
   font-size: 16px;
-  font-weight: normal;
 }
 
-/************************
- * Navigation
-*************************/
-
-#navigation {
-  left: 0;
-  top: 0;
-  position: fixed;
-  padding: 4px 20px;
-  width: 100%;
-  margin-bottom: 8px;
-  /* Arc Theme Integration */
-  background: #ffffff;
-	font-size: 24px;
-	font-weight: normal;
-  color: black;
-  z-index: 9;
-}
-
-#close-btn {
-  color: #CF3132;
-  z-index: 2;
-  position: absolute;
-  right: 0px;
-  padding: 5px 10px;
-}
-
-#close-btn:hover{
-  background: #ECECEC;
-  transition: background 0.5s ease
-}
-
-#close-btn:active {
-  background: #EFEFEF
-}
-
-#status-btn, #about-btn {
-  z-index: 2;
-  position: absolute;
-  padding: 2px 2px;
-  
-}
-
-#status-btn {
- right: 160px;
- display: none;
-}
-
-#about-btn {
- right: 80px;
-}
-
-#about-btn .material-icons {
-  margin-right: 0;
-}
-
-.navigation-button {
-  width: 11px;
-	color: #5c616c;
-  background-color: #fbfbfc;
-  border-color: #cfd6e6;
-  display: inline-block;
-  padding: 4px 20px 4px 8px;
-  margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
-  vertical-align: middle;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.navigation-button i {
-background-color: #fbfbfc;
-border-color: #cfd6e6;
-border-radius: 0.15rem;
-color: #5c616c;
-}
-
-.navigation-button i:hover {
-  background-color: #ffffff;
-  border-color: #cfd6e6;
-  color: #5c616c;
-}
-
-.navigation-button i:active {
-  background-color: #006aff;
-  border-color: #006aff;
-  color: #ffffff;
-}
-
-#navigation-title {
-  font-size: 18px;
-  padding-left: 4px;
-  vertical-align: middle;
-  display: inline-table;
-}
-
-#navigation-sub-title {
-  font-weight: normal;
-  font-size: 18px;
-  vertical-align: middle;
-  display: inline-table;
-  color: #000;
-}
-
-#navigation-divider {
-  top: 47px;
-  left: 0;
-  width: 100%;
-  height: 11px;
-  position: fixed;
-}
-
-#navigation-right {
-  position: fixed;
-  bottom: 16px;
-  right: 22px;
-  z-index: 11;
+#title-inject {
+  display: none;
 }
 
 /************************
@@ -219,7 +99,7 @@ color: #5c616c;
 *************************/
 
 #content {
-  padding-top: 64px;
+  padding-top: 32px;
   padding-bottom: 64px;
 }
 
@@ -227,6 +107,7 @@ color: #5c616c;
   margin: 10px 0;
   padding-left: 0;
   padding-right: 0;
+
 }
 
 .btn-showcase .btn {
@@ -234,6 +115,7 @@ color: #5c616c;
   margin-top: 10px;
   margin-bottom: 10px;
   line-height: 1.4em;
+  border: 1px solid #F0F0F0;
 }
 
 .btn-showcase .btn-lg {
@@ -244,14 +126,19 @@ color: #5c616c;
   text-align: center;
   line-height: 2.2em;
   margin: auto 5%;
+  border: 1px solid #F0F0F0;
 }
 
 .button-group .btn-icon {
   vertical-align: middle;
-  color: #5c616c;
+  color: #006aff;
+  width: 20px; 
 }
 
 .button-group .btn {
+  color: black;
+  background-color: #FFF;
+  border: 1px solid #F0F0F0;
   width: 80%;
 }
 
@@ -310,7 +197,7 @@ a {
 *************************/
 
 #footer {
-  background-color: rgba(208, 208, 208, 0.25);
+  background: #F0F0F0;
   position: fixed;
   bottom: 0;
   height: 64px;
@@ -334,7 +221,7 @@ a {
   display: inline-block;
 }
 .hover-menu-block .hover-menu {
-  background: #ffffff;
+  background: #fff;
   z-index: 15;
   position: absolute;
   /*bottom: -18px;
@@ -360,10 +247,11 @@ a {
   padding: 2px 5px;
   border-radius: 4px;
   text-align: left;
+  color: black;
 }
 
 .hover-menu li:hover {
-  background: #006aff;
+  background-color: #006aff;
   color: white;
 }
 
@@ -450,7 +338,7 @@ hr.soften-light {
 }
 
 .success-text {
-  color: #00af00;
+  color: #477301;
 }
 
 /************************
@@ -561,7 +449,8 @@ hr.soften-light {
   padding-top: 60px;
   padding-bottom: 50px;
   position: fixed;
-  background-color: rgba(245,245,245, 1);
+  border: 1px solid #F0F0F0;
+  background: #FFF;
   color: #000;
   z-index: 8;
   display: none;
@@ -570,13 +459,14 @@ hr.soften-light {
 .index-btn {
   width: 100%;
   text-align: left;
+  border: 1px solid #F0F0F0;
 }
 
 #index-close {
   float: right;
   position: relative;
   text-align: right;
-  color: #000;
+  color: #fff;
 }
 
 .topicContents {
@@ -712,13 +602,16 @@ hr.soften-light {
   max-width: 160px;
   display: block;
   margin: auto;
+  border: 1px solid #F0F0F0;
 }
 
 /************************
  * Community page styles
 *************************/
 .social-banner {
-  background: #404552;
+  border: 1px solid #F0F0F0;
+  background: #FFF;
+  color: black;
   height: 72px;
   text-align: center;
 }
@@ -737,24 +630,21 @@ hr.soften-light {
  * Override default bootstrap styles
 *******************************/
 .btn-inverse {
-  color: #5c616c;
-  background-color: #fbfbfc;
-  border: 1px solid #cfd6e6;
-  border-radius: 0.15rem;
+  color: black;
+  background-color: #FFF;
+  border: 1px solid #F0F0F0;
   margin: 2px;
   transition: background 0.2s ease;
 }
 
 .btn-inverse:hover {
-  color: #cfd6e6;
-  background-color: #fff;
-  border-color: #cfd6e6;
+  color: black;
+  background-color: #FFF;
 }
 
 .btn-inverse:active {
   background-color: #006aff;
-  border-color: #006aff;
-  color: #ffffff;
+  color: white;
 }
 
 .text-right {
@@ -768,34 +658,22 @@ hr.soften-light {
 .btn {
   border: 0;
   padding: 0.1rem 0.5rem 0.2rem;
+  border: 1px solid #F0F0F0;
 }
 
 .btn-primary {
-  color: #5c616c;
-  background-color: #fbfbfc;
-  border: 1px solid #cfd6e6;
+  background: #006aff;
+  color: white;
   transition: background 0.2s ease;
 }
 
-.btn-primary:hover {
-  color: #cfd6e6;
-  background-color: #fff;
-  border-color: #cfd6e6;
-}
-
-.btn-primary:active {
-  background-color: #006aff;
-  border-color: #006aff;
-  color: #ffffff;
-}
-
 a.btn-primary.disabled {
-  background: #ffffff;
-  color: #909090
+  background: lightblue;
 }
 
 .btn-lg {
   line-height: 1.8em;
+  border: 1px solid #F0F0F0;
 }
 
 .code {
@@ -803,6 +681,27 @@ a.btn-primary.disabled {
 	padding: 5px;
 	background: #eee;
 	font-weight: bold;
+}
+
+a:not([href]):not([tabindex]),
+a:focus:not([href]):not([tabindex]),
+a:hover:not([href]):not([tabindex]) {
+  color: #006aff
+}
+
+a:not([href]):not([tabindex]).btn,
+a:focus:not([href]):not([tabindex]).btn,
+a:hover:not([href]):not([tabindex]).btn {
+  color: black
+}
+
+a:not([href]):not([tabindex]).btn-primary,
+a:focus:not([href]):not([tabindex]).btn-primary,
+a:hover:not([href]):not([tabindex]).btn-primary,
+a:not([href]):not([tabindex]).btn-success,
+a:focus:not([href]):not([tabindex]).btn-success,
+a:hover:not([href]):not([tabindex]).btn-success {
+  color: white
 }
 
 .text-md-justify {
@@ -834,6 +733,11 @@ a.btn-primary.disabled {
   display: none
 }
 
+/* Official releases & Unofficial releases */
+.official-only, .unofficial-only {
+  display: none;
+}
+
 /*Popup message */
 #popup-message-window {
   display: none;
@@ -847,12 +751,13 @@ a.btn-primary.disabled {
   padding-top: 150px;
   text-align: center;
   outline: 0;
-  background: rgba(0,0,0, 0.8);
+  background: rgba(255, 255, 255, 0.8);
   color: black;
 }
 
 #popup-message-container {
-  background: #ffffff;
+  background: #FFF;
+  border: 1px solid #F0F0F0;
   width: 50%;
   margin: auto;
   padding: 15px;

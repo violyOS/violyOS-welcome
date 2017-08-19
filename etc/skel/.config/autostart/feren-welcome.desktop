@@ -1,0 +1,10 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Categories=GNOME;GTK;System;
+StartupNotify=false
+Name=Welcome Screen
+Exec=feren-welcome
+Icon=distributor-logo
+Comment=Welcome app to greet new users on their first login
+Keywords=desktop;preferences;

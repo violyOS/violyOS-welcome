@@ -1,0 +1,16 @@
+
+GtkHeaderBar, headerbar{
+  border: none;
+  margin: 0;
+  
+}
+
+GtkLabel, label {
+  padding-left: 20px;
+}
+
+#about-btn, #status-btn, #back-btn {
+}
+
+#about-btn:hover, #status-btn:hover, #back-btn:hover {
+}
