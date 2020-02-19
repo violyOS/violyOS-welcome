@@ -2,7 +2,7 @@
 	{
 		"id": "snap",
 		"name": "Snap",
-		"description": "<strong>Snap</strong> is a new generation application packaging format developed by <em>Canonical</em>. Even though it was initially developed just for different Ubuntu platforms, currently it works in many other GNU/Linux distributions. It will help application developers to provide a unified package that can work on different platforms. By using snap package format, applications can have their own version of libraries and there is no need to worry about libraries installed in underlying operating system. Snap packages enable developers to bring much newer versions of apps to feren OS. Newer versions of KDE, GNOME, browsers or other desktop environment apps will usually build easily on older LTS releases but the complexities of packaging and providing updates have prevented us from delivering them in the past.",
+		"description": "<strong>Snap</strong> is a new generation application packaging format developed by <em>Canonical</em>. Even though it was initially developed just for different Ubuntu platforms, currently it works in many other GNU/Linux distributions. It will help application developers to provide a unified package that can work on different platforms. By using snap package format, applications can have their own version of libraries and there is no need to worry about libraries installed in underlying operating system. Snap packages enable developers to bring much newer versions of apps to violyOS. Newer versions of KDE, GNOME, browsers or other desktop environment apps will usually build easily on older LTS releases but the complexities of packaging and providing updates have prevented us from delivering them in the past.",
 		"image": "img/logos/snap.png",
 		"additional-components": [
 			"<a onclick=\"cmd('link?https://insights.ubuntu.com/2016/04/13/snaps-for-classic-ubuntu')\" class=\"btn btn-inverse\">Learn more</a>"
@@ -22,7 +22,7 @@
 		"description": "<strong>Corebird</strong> is a Twitter client that many Twitter users love to use on Ubuntu, and it's also one of the top Ubuntu applications on OMG Ubuntu for it's well-made and well-designed User Interface and offers every single feature a Twitter user needs, and more.",
 		"image": "img/screenshots/corebird.jpg",
 		"additional-descriptions": [
-			"feren OS provides you with an easy way to install <strong>Corebird Twitter Client</strong>. After installation you need to <strong>manually configure the Corebird client with your Twitter account before you can then enjoy it for yourself.</strong>"
+			"violyOS provides you with an easy way to install <strong>Corebird Twitter Client</strong>. After installation you need to <strong>manually configure the Corebird client with your Twitter account before you can then enjoy it for yourself.</strong>"
 		],
 		"install-message": "Install Corebird",
 		"post-install-message": "Corebird is installed"
@@ -34,7 +34,7 @@
 		"description": "<strong>Flatpak</strong> is a new generation application distribution framework for GNU/Linux platforms. It introduces a unified packaging format across all GNU/Linux distributions. That means a single package can work on any platform. Flatpak helps application developers to ship their application in a single format which can be installed in any GNU/Linux distribution without worrying about the underlying operating system and its built-in libraries.",
 		"image": "img/logos/flatpak.svg",
 		"additional-descriptions": [
-			"feren OS recommends installing <strong>Flatpak</strong> as it will open a new world of possibilities for you. With Flatpak, you can enjoy the latest release of different software packages as soon as it is packaged by the upstream project and you don't have to wait for your distribution to package it for you. Flatpak is the future of packaging, and more and more developers are moving to Flatpak packaging. This will increase availability of software packages drastically.",
+			"violyOS recommends installing <strong>Flatpak</strong> as it will open a new world of possibilities for you. With Flatpak, you can enjoy the latest release of different software packages as soon as it is packaged by the upstream project and you don't have to wait for your distribution to package it for you. Flatpak is the future of packaging, and more and more developers are moving to Flatpak packaging. This will increase availability of software packages drastically.",
 			"Being a user friendly GNU/Linux distribution, <span name='distro-name'></span> allows you to install Flatpak with a single click. After first time configuration, you can use GNOME Software to install Flatpak packages."
 		],
 		"additional-components": [
@@ -50,7 +50,7 @@
 		"description": "<strong>Steam</strong> is a digital distribution platform developed by Valve Corporation offering digital rights management (DRM), multiplayer gaming and social networking services. Steam provides the user with installation and automatic updating of games on multiple computers, and community features such as friends lists and groups, cloud saving, and in-game voice and chat functionality. The software provides a freely available application programming interface (API) called Steamworks, which developers can use to integrate many of Steam's functions into their products, including networking, matchmaking, in-game achievements, micro-transactions, and support for user-created content through Steam Workshop.",
 		"image": "img/logos/steam.png",
 		"additional-descriptions": [
-			"Being a proprietary software, Steam is not included in primary repositories of feren OS. However, to provide more choice to users, Steam is shipped as a part of the <em>Multiverse</em> repository. feren OS provides you option to enable the <em>Multiverse</em> repository and to install Steam with a single mouse click."
+			"Being a proprietary software, Steam is not included in primary repositories of violyOS. However, to provide more choice to users, Steam is shipped as a part of the <em>Multiverse</em> repository. violyOS provides you option to enable the <em>Multiverse</em> repository and to install Steam with a single mouse click."
 		],
 		"install-message": "Install & Configure Steam",
 		"post-install-message": "Steam is installed"

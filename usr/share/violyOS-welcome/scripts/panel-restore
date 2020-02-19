@@ -3,7 +3,7 @@
 # Check for backup file if does n't exist show error
 # message and exit
 
-backup="$HOME/.config/feren-welcome/cinnamon-backup.conf"
+backup="$HOME/.config/violyOS-welcome/cinnamon-backup.conf"
 
 if [ ! -f $backup ]
 then

@@ -6,23 +6,23 @@
 # Copyright 2014 Antergos
 # Copyright 2016 Ubuntu Mate
 # Copyright 2016-2017 Ubuntu Budgie Developers
-# Copyright 2016-2017 feren OS Developers
+# Copyright 2016-2017 violyOS Developers
 #
-# feren-welcome is free software: you can redistribute it and/or modify
+# violyOS-welcome is free software: you can redistribute it and/or modify
 # it under the temms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# feren OS welcome is distributed in the hope that it will be useful,
+# violyOS welcome is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with feren OS welcome. If not, see <http://www.gnu.org/licenses/>.
+# along with violyOS welcome. If not, see <http://www.gnu.org/licenses/>.
 #
 
-""" Welcome App for feren OS and feren OS """
+""" Welcome App for violyOS and violyOS """
 
 import gi
 
@@ -302,7 +302,7 @@ class AppView(WebKit2.WebView):
             def run_script(script, root):
 
                 if root:
-                    process = subprocess.Popen(['pkexec', start_location + 'feren-welcome-privileged-actions', "SCRIPT", filename, root])
+                    process = subprocess.Popen(['pkexec', start_location + 'violyOS-welcome-privileged-actions', "SCRIPT", filename, root])
                 else:
                     process = subprocess.Popen(['sh', script])
 
@@ -498,7 +498,7 @@ class AppView(WebKit2.WebView):
             message += "Version {}".format(
               systemstate.app_version
             )
-            message += "<br><br>(feren OS 2017.08 Release)"
+            message += "<br><br>(violyOS 2017.08 Release)"
             message += "</div>"
 
             popup = PopupMessage(message, PopupMessage.INFO)
@@ -736,7 +736,7 @@ class PackageManager(Thread):
                 p = subprocess.Popen([app._data_path + 'scripts/steam'])
             else:
                 p = subprocess.Popen(['pkexec',
-                    start_location + 'feren-welcome-privileged-actions',
+                    start_location + 'violyOS-welcome-privileged-actions',
                     action, filename, code, app.json_path])
             retval = p.wait()
 
@@ -912,7 +912,7 @@ class SystemState(object):
         # User's autostart directory and full path to autostart symlink.
         # Used for systemstate.autostart_toggle() function.
         self._autostart_dir = os.path.expanduser('~/.config/autostart/')
-        self._autostart_path = os.path.expanduser(os.path.join(self._autostart_dir, 'feren-welcome.desktop'))
+        self._autostart_path = os.path.expanduser(os.path.join(self._autostart_dir, 'violyOS-welcome.desktop'))
         self.autostart = self.autostart_check()
 
         # Get current architecture of system.
@@ -980,11 +980,11 @@ class SystemState(object):
         self.official = int(self.os_version[:2]) >= 17
 
         if self.official:
-            self.distroname = 'feren OS'
+            self.distroname = 'violyOS'
             self.distro_wordmark = 'ubuntu-budgie-wordmark.svg'
         else:
-            self.distroname = 'feren OS'
-            self.distro_wordmark = 'feren OS-wordmark.svg'
+            self.distroname = 'violyOS'
+            self.distro_wordmark = 'violyOS-wordmark.svg'
 
     def autostart_check(self):
         # Ensure our autostart directories exist
@@ -1005,7 +1005,7 @@ class SystemState(object):
         if not os.path.exists(self._autostart_path):
             # create the autostart symlink
             try:
-                os.symlink('/usr/share/applications/feren-welcome.desktop', self._autostart_path)
+                os.symlink('/usr/share/applications/violyOS-welcome.desktop', self._autostart_path)
             except OSError as err:
                 dbg.stdout('Welcome', 'Error while enabling autostart: ' + str(err), 0, 1)
                 pass
@@ -1331,11 +1331,11 @@ class WelcomeApp(object):
                    Non-production testing.')
             self._data_path = os.path.join(self._location, 'data/')
             start_location = self._location + "/"
-        elif(os.path.exists('/usr/share/feren-welcome/')):
-            self._data_path = '/usr/share/feren-welcome/'
-            start_location = '/usr/lib/feren-welcome/'
+        elif(os.path.exists('/usr/share/violyOS-welcome/')):
+            self._data_path = '/usr/share/violyOS-welcome/'
+            start_location = '/usr/lib/violyOS-welcome/'
         else:
-            print('Unable to source the feren-welcome data directory.')
+            print('Unable to source the violyOS-welcome data directory.')
             sys.exit(1)
 
         self.first_run = self._check_first_run()
@@ -1358,7 +1358,7 @@ class WelcomeApp(object):
         # build window
         w = Gtk.Window()
         w.set_position(Gtk.WindowPosition.CENTER)
-        w.set_wmclass('feren-welcome', _("Welcome Screen"))
+        w.set_wmclass('violyOS-welcome', _("Welcome Screen"))
         w.set_title(_("Welcome Screen"))
         w.set_default_size(992, 500)
         #w.set_resizable(False)
@@ -1521,7 +1521,7 @@ class Arguments(object):
         for arg in sys.argv:
           if arg == '--help' or arg == '-h':
               print('\nWelcome App Parameters\n  Intended for debugging and testing purposes only!\n')
-              print('\nUsage: feren-welcome [arguments]')
+              print('\nUsage: violyOS-welcome [arguments]')
               #     | Command                      | Help Text                                     |
               print('  -d, --dev, --debug           Disables locales and is very verbose')
               print('                               intended for development purposes.')
@@ -1613,7 +1613,7 @@ def find_app_version(cache=apt.Cache()):
     # when function is invoked while processing command line arguments
     versions = []
 
-    for package in ['feren-welcome', 'budgie-desktop']:
+    for package in ['violyOS-welcome', 'budgie-desktop']:
         try:
             app = cache[package]
         except:
@@ -1688,12 +1688,12 @@ class Translations(object):
         dbg.stdout("i18n", "Using locale for gettext: " + self.locale, 1, 0)
         dbg.stdout("i18n", "Using path for gettext: " + i18n_path, 1, 0)
         try:
-            t = gettext.translation("feren-welcome", localedir=i18n_path, languages=[self.locale], fallback=True)
+            t = gettext.translation("violyOS-welcome", localedir=i18n_path, languages=[self.locale], fallback=True)
             _ = t.gettext
             dbg.stdout("i18n", "Translation found for gettext.", 1, 2)
         except:
             dbg.stdout("i18n", "No translation exists for gettext. Using default.", 1, 2)
-            t = gettext.translation("feren-welcome", localedir="/usr/share/locale/", fallback=True)
+            t = gettext.translation("violyOS-welcome", localedir="/usr/share/locale/", fallback=True)
             _ = t.gettext
 
     # Determine if localized pages exist, or fallback to original pages.
@@ -1705,11 +1705,11 @@ class Translations(object):
             self.relative_i18n = True
             dbg.stdout("i18n", "Locale Set: " + self.locale + " (using relative path)", 1, 0)
             return os.path.join(data_path, "i18n", self.locale)
-        elif (os.path.exists(os.path.join("/usr/share/feren-welcome/i18n/", self.locale))):
+        elif (os.path.exists(os.path.join("/usr/share/violyOS-welcome/i18n/", self.locale))):
             self.localized = True
             self.relative_i18n = False
             dbg.stdout("i18n", "Locale Set: " + self.locale + " (using /usr/share/ path)", 1, 0)
-            return os.path.join("/usr/share/feren-welcome/i18n/", self.locale)
+            return os.path.join("/usr/share/violyOS-welcome/i18n/", self.locale)
         else:
             self.localized = False
             self.relative_i18n = False
@@ -1724,11 +1724,11 @@ def whereami():
     if( os.path.exists( os.path.join(current_folder, 'data/' ) ) ):
         dbg.stdout('Welcome', 'Using relative path for data source. Non-production testing.', 1, 0)
         data_path = os.path.join(current_folder, 'data/')
-    elif( os.path.exists('/usr/share/feren-welcome/') ):
-        dbg.stdout('Welcome', 'Using /usr/share/feren-welcome/ path.', 1, 0)
-        data_path = '/usr/share/feren-welcome/'
+    elif( os.path.exists('/usr/share/violyOS-welcome/') ):
+        dbg.stdout('Welcome', 'Using /usr/share/violyOS-welcome/ path.', 1, 0)
+        data_path = '/usr/share/violyOS-welcome/'
     else:
-        dbg.stdout('Welcome', 'Unable to source the feren-welcome data directory.', 0, 1)
+        dbg.stdout('Welcome', 'Unable to source the violyOS-welcome data directory.', 0, 1)
         sys.exit(1)
     return data_path
 
@@ -1741,7 +1741,7 @@ if __name__ == "__main__":
     translations = Translations()
 
     # Local data directory to store backup info
-    localdir = os.path.expanduser('~') + '/.config/feren-welcome'
+    localdir = os.path.expanduser('~') + '/.config/violyOS-welcome'
     if not os.path.isdir(localdir):
         os.makedirs(localdir)
 
@@ -1751,7 +1751,7 @@ if __name__ == "__main__":
     pm.start()
     # Init notification
     try:
-        NotifyInit("feren-welcome")
+        NotifyInit("violyOS-welcome")
     except:
         dbg.stdout("Notifier", "Failed to initialize notifier", 0, 0)
 
